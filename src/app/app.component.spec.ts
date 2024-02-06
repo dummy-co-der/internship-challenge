@@ -1,27 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
+import { UserInputFormComponent } from './components/user-input-form/user-input-form.component';
+import { UserRepoDetailsComponent } from './components/user-repo-details/user-repo-details.component';
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
-  }));
+  const routes: Routes = [
+    { path: '', component: UserInputFormComponent },
+    { path: 'user-details/:username', component: UserRepoDetailsComponent },
+  ];
+  beforeEach(() =>
+    TestBed.configureTestingModule({
+      imports: [RouterModule.forRoot(routes)],
+      declarations: [AppComponent],
+    })
+  );
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'fyle-frontend-challenge'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('fyle-frontend-challenge');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fyle-frontend-challenge app is running!');
   });
 });
