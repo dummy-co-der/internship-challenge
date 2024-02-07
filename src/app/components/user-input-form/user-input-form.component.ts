@@ -18,10 +18,17 @@ export class UserInputFormComponent {
   ) {}
 
   imageUrl =
-    'https://user-images.githubusercontent.com/26748614/96337246-f14d4580-1085-11eb-8793-a86d929e034d.jpg';
+    'https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2029&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   onSubmit() {
+    const githubUsernameRegex =
+      /^[a-zA-Z\d](?:[a-zA-Z\d]|-(?=[a-zA-Z\d])){0,38}$/;
+
     if (this.username.trim()) {
+      if (!githubUsernameRegex.test(this.username.trim())) {
+        this.toastr.error('Please enter a valid GitHub username.');
+        return;
+      }
       this.apiService.getUser(this.username).subscribe({
         next: (response) => {
           this.apiService.userName = this.username.trim();
