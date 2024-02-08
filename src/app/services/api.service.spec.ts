@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ApiService } from './api.service';
 import { HttpClient } from '@angular/common/http';
-import { MockHttpClient } from '../test/mock/http-client-mock';
+import { MockHttpClient } from '../test/http-client-mock';
 import {
   HttpClientTestingModule,
   HttpTestingController,

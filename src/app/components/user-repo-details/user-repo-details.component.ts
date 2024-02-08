@@ -26,6 +26,10 @@ export class UserRepoDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show();
     this.username = this.apiService.userName;
+    this.fetchUserAndRepoDetails();
+  }
+
+  fetchUserAndRepoDetails(): void {
     forkJoin({
       userDetails: this.apiService.getUser(this.username),
       repoDetails: this.apiService.getRepoDetails(this.username),
@@ -35,16 +39,20 @@ export class UserRepoDetailsComponent implements OnInit {
         finalize(() => this.spinner.hide())
       )
       .subscribe({
-        next: (response) => {
-          this.userDetails = response.userDetails;
-          this.repoDetails = response.repoDetails;
+        next: ({ userDetails, repoDetails }) => {
+          this.userDetails = userDetails;
+          this.repoDetails = repoDetails;
         },
         error: (error) => {
           console.log(error);
           this.notFoundError = true;
-          this.toastr.error('Error fetching User details:');
+          this.toastr.error('Error fetching user details.');
           this.spinner.hide();
         },
       });
+  }
+
+  resetPage(): void {
+    this.currentPage = 1;
   }
 }

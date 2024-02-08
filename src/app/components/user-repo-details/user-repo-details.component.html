@@ -125,9 +125,10 @@
     </div>
 
     <!-- Dropdown for Items Per Page -->
-    <div class="flexml-4">
+    <div>
       <label for="itemsPerPage" class="text-gray-600 mr-2">Items Per Page:</label>
-      <select [(ngModel)]="selectedItemsPerPage" name="itemsPerPage" id="itemsPerPage" class="  rounded-md">
+      <select [(ngModel)]="selectedItemsPerPage" name="itemsPerPage" id="itemsPerPage" class="rounded-md"
+        (change)="resetPage()">
         <option *ngFor="let option of itemsPerPageOptions" [value]="option">
           {{ option }}
         </option>

@@ -1,6 +1,6 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError, catchError } from 'rxjs';
+import { Observable } from 'rxjs';
 import { GitHubUser } from '../shared/git-hub-user-model';
 
 @Injectable({

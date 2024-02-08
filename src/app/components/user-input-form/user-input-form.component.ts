@@ -24,23 +24,22 @@ export class UserInputFormComponent {
     const githubUsernameRegex =
       /^[a-zA-Z\d](?:[a-zA-Z\d]|-(?=[a-zA-Z\d])){0,38}$/;
 
-    if (this.username.trim()) {
-      if (!githubUsernameRegex.test(this.username.trim())) {
-        this.toastr.error('Please enter a valid GitHub username.');
-        return;
-      }
-      this.apiService.getUser(this.username).subscribe({
-        next: (response) => {
-          this.apiService.userName = this.username.trim();
-          this.apiService.userDetail = response;
-          this.router.navigate(['/user-details']);
-        },
-        error: (error) => {
-          this.toastr.error(error.error.message, 'Error');
-        },
-      });
-    } else {
+    if (
+      !this.username.trim() ||
+      !githubUsernameRegex.test(this.username.trim())
+    ) {
       this.toastr.error('Please enter a valid GitHub username.');
+      return;
     }
+    this.apiService.getUser(this.username).subscribe({
+      next: (response) => {
+        this.apiService.userName = this.username.trim();
+        this.apiService.userDetail = response;
+        this.router.navigate(['/user-details']);
+      },
+      error: (error) => {
+        this.toastr.error(error.error.message, 'Error');
+      },
+    });
   }
 }
