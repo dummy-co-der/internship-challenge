@@ -41,7 +41,7 @@ For getting the code coverage repo
 # A new folder will be created by running the command
 $ npm test --no-watch --code-coverage
 ```
-Go to the new folder created with the name code coverage. Then navigate to the folder named as fyle-internship-challenge. Then open the file index.html which will be openend in the new tab in the default browser (i.e. Chrome, Edge etc.)
+Go to the new folder created with the name code coverage. Then navigate to the folder named as fyle-frontend-challenge. Then open the file index.html which will be opened in the new tab in the default browser (i.e. Chrome, Edge etc.)
 
 ## Code coverage and karma report result
 

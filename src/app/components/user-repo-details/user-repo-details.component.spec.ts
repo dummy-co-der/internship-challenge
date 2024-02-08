@@ -43,4 +43,10 @@ describe('UserRepoDetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should reset page to 1', () => {
+    component.currentPage = 3;
+    component.resetPage();
+    expect(component.currentPage).toEqual(1);
+  });
 });
