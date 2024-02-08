@@ -2,7 +2,13 @@
 This is an Angular application built with TypeScript and managed with npm. The project structure is organized with a focus on modularity and scalability.
 
 ## Snapshots
+![Center Image](project-snapshots/laptop.png)
 
+<br>
+<div align="center">
+  <img src="project-snapshots/mobile.png" alt="Mobile screen" height="500"/>
+  <img src="project-snapshots/tab.png" alt="Tab screen" height="500"/>
+</div>
 
 ## Features
 - **SCSS Styling:** The components in this project are styled using SCSS.
