@@ -1,43 +1,43 @@
 # Fyle Frontend Challenge
+This is an Angular application built with TypeScript and managed with npm. The project structure is organized with a focus on modularity and scalability.
 
-## Who is this for?
+## Snapshots
 
-This challenge is meant for candidates who wish to intern at Fyle and work with our engineering team. The candidate should be able to commit to at least 6 months of dedicated time for internship.
 
-## Why work at Fyle?
+## Features
+- **SCSS Styling:** The components in this project are styled using SCSS.
+- **Toastr Notifications:** The project uses the ngx-toastr library for displaying notifications.
+- **Spinner Animations:** The project uses the ngx-spinner library for displaying loading animations.
+- **Pagination:** The project uses ngx-pagination, a library for Angular applications that provides pagination functionality.
+- **RxJS:** This project uses the rxjs for composing asynchronous and event-based programs by using operators to manipulate streams of data.
 
-Fyle is a fast-growing Expense Management SaaS product. We are ~40 strong engineering team at the moment. 
+## Setup and Running
+### Prerequisites
+Ensure that you have Angular CLI installed. If not, refer to the [Angular CLI documentation](https://angular.io/cli) for installation instructions.
 
-We are an extremely transparent organization. Check out our [careers page](https://careers.fylehq.com) that will give you a glimpse of what it is like to work at Fyle. Also, check out our Glassdoor reviews [here](https://www.glassdoor.co.in/Reviews/Fyle-Reviews-E1723235.htm). You can read stories from our teammates [here](https://stories.fylehq.com).
+### How to use
+From your command line, first clone this repo:
 
-## Challenge outline
+```bash
+# Clone this repository
+$ git clone https://github.com/dummy-co-der/internship-challenge.git
+# Install the dependencies
+$ npm install
+# Run the project
+$ npm start
+# For karma report
+$ npm test
+```
 
-This challenge involves implementing application using github api. 
+For getting the code coverage repo
 
-The services that you need to use are already implemented - check out ApiService.
+```bash
+# A new folder will be created by running the command
+$ npm test --no-watch --code-coverage
+```
+Go to the new folder created with the name code coverage. Then navigate to the folder named as fyle-internship-challenge. Then open the file index.html which will be openend in the new tab in the default browser (i.e. Chrome, Edge etc.)
 
-You can see details of this challenge [here](https://fyleuniverse.notion.site/fyleuniverse/Fyle-Frontend-development-challenge-cb5085e5e0864e769e7b98c694400aaa)
+## Code coverage and karma report result
 
-__Note__ - This challenge is in angular. We work on angular frameworks & after you join we expect the same from you. Hence it is required to complete this assignement in angular itself.
-
-## What happens next?
-
-You will hear back within 48 hours from us via email.
-
-## Installation
-
-1. Fork this repository to your github account.
-2. Clone the forked repository and proceed with steps mentioned below.
-
-### Install requirements
-* Install angular cli [Ref](https://angular.io/cli)
-* `npm install` in this repository 
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Further help
-
-Visit the [Angular Documentation](https://angular.io/guide/styleguide) to learn more.
-Styling is to be strictly done with [Tailwind](https://tailwindcss.com/docs/installation).
+![Center Image](test-case-result/code-coverage.png)
+![Center Image](test-case-result/karma-result.png)
